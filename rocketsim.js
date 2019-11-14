@@ -1,5 +1,11 @@
 var canvas = document.querySelector("#myCanvas");
 var ctx = canvas.getContext("2d");
+var mass = document.querySelector("#mass");
+var color = document.querySelector("#color");
+var submit = document.querySelector("button");
+
+var fill = "red";
+
 
 var rocket = {
     x:50,
@@ -38,7 +44,7 @@ var rocket = {
 function drawRocket(){
     ctx.beginPath();
     ctx.arc(rocket.x,rocket.y,5,0,Math.PI*2);
-    ctx.fillStyle = "red";
+    ctx.fillStyle = fill;
     ctx.fill();
     ctx.closePath();
 };
@@ -70,6 +76,11 @@ function keyDown(e){
 
 
 document.addEventListener("keydown",keyDown);
+submit.addEventListener("click",function(){
+    rocket.mass = parseInt(mass.value)
+    fill = color.value
+    
+})
 
-setInterval(draw,100);
+ var refreshInterval = setInterval(draw,25);
 

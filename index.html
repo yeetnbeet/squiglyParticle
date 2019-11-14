@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <title>rocketsim</title>
+    <link rel="stylesheet" href="rocket.css">
+
+
+
     <style>
     	* { padding: 0; margin: 10; }
     	canvas { background: black; display: block; margin: 0 auto; }
@@ -11,8 +15,29 @@
 <body>
 <h1>Welcome To Squigly Particle</h1>
 <p>The Physics based single particle sandbox where you struggle draw the simplest of shapes</p>
-
+<p id="docs">The Arrow keys move the particle using thrust, that's it</p>
 <canvas id="myCanvas" width="1000" height="600"></canvas>
+
+<div>
+    
+    <br>
+    
+        <label for="rate">select The mass: </label>
+        <select name="refresh" id="mass">
+            <option value="1000">1000</option>
+            <option value="750">750</option>
+            <option value="500">500</option>
+            <option value="250">250</option>
+        </select>
+        <label for="color">pick The color: </label>
+        <select name="color" id="color">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+        <button>Save Changes</button>
+    
+</div>
 
 <script src="rocketsim.js"></script>
 
